@@ -60,9 +60,9 @@ Project Structure:
 
 
 Screenshots :
-![WEB INTERFACE](image-1.png)
-![OUTCOME](image-2.png)
+screenshots\webinterface.png
+screenshots\outcome.png
 
 
-Author
+Author:
 Arushi Jaiswal
