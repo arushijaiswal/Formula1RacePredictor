@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🏎️ F1 Race Outcome Predictor</title>
+
+  <!-- ✅ Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Your custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">🏁 F1 Race Outcome Predictor</h1>
+
+    <!-- ✅ Prediction Form -->
+    <div class="card p-4 shadow-sm">
+      <form id="predictForm">
+        <!-- Driver select -->
+        <div class="mb-3">
+          <label for="driver" class="form-label">Select Driver</label>
+          <select class="form-select" name="driver" id="driver" required>
+            {% for d in drivers %}
+              <option value="{{ d }}">{{ d }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Track select -->
+        <div class="mb-3">
+          <label for="track" class="form-label">Select Track</label>
+          <select class="form-select" name="track" id="track" required>
+            {% for t in tracks %}
+              <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Weather select -->
+        <div class="mb-3">
+          <label for="weather" class="form-label">Select Weather</label>
+          <select class="form-select" name="weather" id="weather" required>
+            {% for w in weathers %}
+              <option value="{{ w }}">{{ w }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Grid position input -->
+        <div class="mb-3">
+          <label for="grid_position" class="form-label">Starting Grid Position</label>
+          <input type="number" class="form-control" name="grid_position" id="grid_position" min="1" max="20" required />
+        </div>
+
+        <!-- ✅ Predict button with ID -->
+        <button id="predictButton" type="submit" class="btn btn-danger w-100">
+          Predict Race Outcome
+        </button>
+
+        <!-- ✅ Reset button with ID -->
+        <button id="resetButton" type="button" class="btn btn-secondary w-100 mt-2">
+          Reset
+        </button>
+      </form>
+    </div>
+
+    <!-- ✅ Prediction result -->
+    <div id="result" class="alert mt-4 d-none"></div>
+
+    <!-- ✅ Chart container -->
+    <div id="chart" class="mt-4"></div>
+  </div>
+
+  <!-- ✅ Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ✅ Your custom script.js -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
