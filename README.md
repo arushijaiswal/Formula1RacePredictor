@@ -18,8 +18,8 @@ Frontend: HTML, CSS (Bootstrap), JavaScript (AJAX)
 How to Run Locally:
 
 Clone the repository:
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/arushijaiswal/Formula1RacePredictor.git
+cd Formula1RacePredictor
 
 Create a virtual environment:
 python -m venv venv
